@@ -1,0 +1,18 @@
+[
+    {
+      "name": "HappyPills",
+      "description": "A web application for ordering happy pills with a user-friendly interface. I made this project to explore DOM programming. I used Html to code the website and Javascript to highlight the pill container images when selected. The website itself is a silly creation I came up with to illustrate the absurd idea of selling recreational possibly illegal drugs online.",
+      "link": "projects/HappyPills/index.html"
+    },
+    {
+      "name": "LibraryDatabase",
+      "description": "A database system for managing library books and member accounts. This is the project Im most proud of due to how extensive and varied the code is. I used a Spring Boot framework to create this application with Java and HTML. You can create user and admin accounts that have a fully functioning security program although for demonstration purposes anyone can create an admin account.",
+      "link": "/assignment5/"
+    },
+    {
+      "name": "OurSolarSystem",
+      "description": "An interactive guide to the solar system and its planets. This project uses more advanced DOM programming.",
+      "link": "projects/OurSolarSystem/index.html"
+    }
+  ]
+  

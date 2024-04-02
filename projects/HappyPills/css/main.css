@@ -1,0 +1,103 @@
+:root {
+    --dark: #004225;
+    --med: #00663C;
+    --light: #009854;
+    --shadow: #001B10;
+    --bg-dark: #3b7a6b;
+}
+
+body {
+    background-color: var(--bg-dark);
+    font-family: Arial, sans-serif;
+}
+
+form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: var(--light);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+label, select, input[type="text"], input[type="email"], input[type="number"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+input[type="text"]:required, input[type="number"]:required {
+    background-color: #ffd6cc;
+}
+
+input[type="text"]:invalid, input[type="number"]:invalid {
+    border-bottom: 2px solid red;
+}
+
+input[type="submit"], button {
+    background-color: var(--dark);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+}
+
+#header-logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 250px;
+}
+
+.pill-radio {
+    display: none;
+}
+
+.pill-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.pill-image {
+    display: inline-block;
+    width: 100px;
+    border: 5px solid transparent;
+    transition: border-color 0.3s;
+    margin-right: 0.5rem;
+}
+
+.pill-radio:checked + .pill-image {
+    border-color: #FFD700;
+}
+
+.head {
+    text-align: center;
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}

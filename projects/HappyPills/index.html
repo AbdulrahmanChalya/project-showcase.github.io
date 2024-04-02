@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Customized Product Order</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="scripts/main.js"></script>
+</head>
+
+<body>
+
+    <div id="container">
+        <header>
+            <img src="images/smile.jpeg" alt="Happy Pills Logo" id="header-logo" role="img" aria-label="Happy Pills Logo">
+            <h1 class="head">Happy Pills!</h1>
+        </header>
+
+        <form action="/submit-path" method="post" aria-labelledby="orderTitle">
+            <h2 id="orderTitle">Order Happy Pills!</h2>
+
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required aria-required="true" aria-describedby="nameDesc">
+                <span id="nameDesc" class="visually-hidden">Please enter your name.</span>
+            </div>
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" aria-describedby="emailDesc">
+                <span id="emailDesc" class="visually-hidden">Please enter a valid email address.</span>
+            </div>
+
+            <div>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="100" required aria-required="true" aria-describedby="quantityDesc">
+                <span id="quantityDesc" class="visually-hidden">Please select a quantity between 1 and 100.</span>
+            </div>
+
+            <div>
+                <label for="express">
+                <input type="checkbox" id="express" name="express">Express Shipping
+                </label>
+            </div>
+
+            <fieldset>
+                <legend>Color Options</legend>
+
+                <label class="pill-label">
+                    <input type="radio" id="red" name="color" value="red" class="pill-radio" checked>
+                    <img src="images/red-pill.jpeg" alt="Red Pill" class="pill-image" role="img" aria-label="Red Pill"> Red
+                </label>
+
+                <label class="pill-label">
+                    <input type="radio" id="blue" name="color" value="blue" class="pill-radio">
+                    <img src="images/blue-pill.jpeg" alt="Blue Pill" class="pill-image" role="img" aria-label="Blue Pill"> Blue
+                </label>
+
+                <label class="pill-label">
+                    <input type="radio" id="yellow" name="color" value="yellow" class="pill-radio">
+                    <img src="images/yellow-pill.jpeg" alt="Yellow Pill" class="pill-image" role="img" aria-label="Yellow Pill"> Yellow
+                </label>
+            </fieldset>
+
+            <div>
+                <label for="size">Dose:</label>
+                <select id="size" name="size" aria-describedby="sizeDesc">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                    <option value="extra-large">Extra Large</option>
+                </select>
+                <span id="sizeDesc" class="visually-hidden">Please select a pill dose size.</span>
+            </div>
+
+            <div class="container">
+                <input type="image" src="images/smile.jpeg" alt="Submit Order" name="submit" role="button" aria-label="Submit Order">
+                <div class="centered">Order</div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
