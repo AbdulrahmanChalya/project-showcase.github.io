@@ -23,11 +23,13 @@ function fetchProjects() {
 
 // Function to create project links and attach event listeners
 function createProjectLinks() {
-  const projectContainer = document.querySelector('.assignment-links ul');
+  const projectContainer = document.querySelector('.project-links ul');
   projectData.forEach(project => {
-    const projectElement = projectContainer.querySelector(`[href="${project.link}"] .assignment-text`);
-    projectElement.addEventListener('mouseover', () => displayProjectDescription(project.name, project.description));
-    projectElement.addEventListener('mouseleave', hideProjectDescription);
+    const projectElement = projectContainer.querySelector(`[href="${project.link}"] .project-text`);
+    if (projectElement) {
+        projectElement.addEventListener('mouseover', () => displayProjectDescription(project.name, project.description));
+        projectElement.addEventListener('mouseleave', hideProjectDescription);
+    }
   });
 }
 
