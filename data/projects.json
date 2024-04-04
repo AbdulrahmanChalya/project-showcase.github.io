@@ -6,8 +6,8 @@
     },
     {
       "name": "LibraryDatabase",
-      "description": "A database system for managing library books and member accounts. This is the project Im most proud of due to how extensive and varied the code is. I used a Spring Boot framework to create this application with Java and HTML. You can create user and admin accounts that have a fully functioning security program although for demonstration purposes anyone can create an admin account.",
-      "link": "/assignment5/"
+      "description": "A database system for managing library books and member accounts. This is the project Im most proud of due to how extensive and varied the code is. I used a MVC framework to create this application with Java, HTML as well as Thymeleaf. You can create user and admin accounts with fully functioning acount security using Bcrypt although for demonstration purposes anyone can create an admin account. Due to server restrictions this website will take time to load.",
+      "link": "https://library-database-qvbg.onrender.com"
     },
     {
       "name": "OurSolarSystem",
