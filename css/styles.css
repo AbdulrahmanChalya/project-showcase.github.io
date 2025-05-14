@@ -1,93 +1,86 @@
 /* Root Variables */
 :root {
-    --base-font-size: 20px;
-    --main-dark-color: #121212;
-    --main-light-color: #e0e0e0;
-    --contrast-dark-color: #222831;
-    --contrast-light-color: #393e46;
-    --text-border-color: #00adb5;
-    --border-width: 2%;
-    --inner-spacing: 4%;
+    --font-size: 18px;
+    --bg-dark: #1a1a1a;
+    --bg-medium: #2c2c2c;
+    --bg-light: #f5f5f5;
+    --text-light: #ffffff;
+    --text-muted: #cccccc;
+    --accent: #00bcd4;
+    --accent-dark: #0097a7;
+    --padding: 1.5rem;
 }
 
 /* Base Styles */
 body {
-    font-size: var(--base-font-size);
-    font-family: 'Arial', sans-serif;
-    background-color: var(--main-dark-color);
-    color: var(--main-light-color);
+    font-size: var(--font-size);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Reusable Component Styles */
-header, footer, main, nav, article, section, h1, h2, h3, p, li {
-    border: var(--text-border-color) solid 1px;
-    padding: var(--inner-spacing);
+/* Layout Defaults */
+header, footer, main, section {
+    padding: var(--padding);
 }
 
-/* Header Styles */
+h1, h2, h3 {
+    color: var(--text-light);
+    margin: 0 0 1rem;
+}
+
+/* Header */
 header {
-    position: relative;
-    background-color: var(--main-dark-color);
-    color: var(--main-light-color);
-    border-width: var(--border-width);
+    background-color: var(--bg-medium);
+    text-align: center;
 }
 
-/* Navigation Styles */
+header h1 {
+    font-size: 2.2rem;
+    color: var(--accent);
+}
+
+header h2 {
+    font-weight: normal;
+    color: var(--text-muted);
+}
+
+/* Navigation */
 nav.project-links {
-    background-color: var(--contrast-dark-color);
+    background-color: var(--bg-dark);
+    margin-top: 2rem;
 }
 
 nav.project-links ul {
     display: flex;
-    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 0;
+    gap: 1.5rem;
+    list-style: none;
     margin: 0;
-    justify-content: space-around;
 }
 
-nav.project-links ul li {
-    padding: 10px;
-}
-
-/* Project Link Styles with Images */
 .project {
     display: block;
+    width: 220px;
+    height: 150px;
     position: relative;
-    width: 200px; /* Set a specific width */
-    height: 150px; /* Set a specific height */
+    border-radius: 8px;
     overflow: hidden;
-    border-radius: 5px;
+    background-color: var(--bg-medium);
+    text-decoration: none;
 }
 
 .project-bg {
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    transform: scale(1.2);
-    opacity: 0.7;
-}
-
-.project-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
-    border-radius: 5px;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
-}
-
-.project:hover .project-bg::before {
-    opacity: 0;
+    transition: transform 0.4s ease;
 }
 
 .project-text {
@@ -95,114 +88,75 @@ nav.project-links ul li {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #ffffff;
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--text-light);
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
     text-align: center;
-    font-size: 1.5em;
-    transition: opacity 0.5s ease;
-    opacity: 1;
+    border-radius: 4px;
+    width: max-content;
+    max-width: 90%;
 }
 
 .project:hover .project-bg {
-    transform: scale(1);
-    opacity: 1;
+    transform: scale(1.05);
 }
 
-.project:hover .project-text {
-    opacity: 0;
-}
-
-/* Project Info Styles */
+/* Project Info Box */
 #project-info {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    background-color: var(--contrast-dark-color);
-    color: var(--main-light-color);
-    padding: var(--inner-spacing);
-    box-sizing: border-box;
-    border: var(--text-border-color) solid 1px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--bg-medium);
+    color: var(--text-light);
+    padding: var(--padding);
+    margin: 2rem auto;
+    border-radius: 6px;
+    max-width: 900px;
     display: none;
-    z-index: 1000;
-    margin-top: 10px;
 }
 
-#project-info h3, #project-info p {
-    margin: 10px 0;
-    padding: 0 25px;
-    text-align: justify;
-}
-
-/* Footer Styles */
-footer {
-    font-size: 0.8em;
-    text-align: center;
-    padding: var(--inner-spacing);
-    background-color: var(--contrast-dark-color);
-    color: var(--main-light-color);
-}
-
-footer address {
-    font-style: normal;
-}
-
-footer > nav ul {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-}
-
-footer > nav li {
-    padding: 0 10px;
-}
-
-/* Article Styles */
-article {
-    background-color: var(--contrast-dark-color);
-    color: var(--main-light-color);
-    margin: 10px 0;
-    padding: var(--inner-spacing);
-    border-radius: 5px;
-}
-
-article h3, article p {
-    margin: 10px 0;
-}
-
-/* Resume Section Styles */
+/* Resume Section */
 .resume {
-    background-color: var(--main-dark-color);
-    color: var(--main-light-color);
-    padding: 20px;
-    max-width: 1300px;
-    margin: 40px auto;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: var(--bg-medium);
+    border-radius: 8px;
+    padding: var(--padding);
 }
 
-.resume h2, .resume h3, .resume p, .resume ul, .resume li {
-    color: var(--main-light-color); /* Ensuring text color is consistent */
+.resume table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
 }
 
-.resume table, .resume td, .resume th {
-    border: 1px solid var(--text-border-color);
-}
-
-.resume th, .resume td {
-    padding: 10px;
-    text-align: left;
+.resume td, .resume th {
+    padding: 0.75rem;
     vertical-align: top;
-}
-
-.resume td {
-    background-color: var(--contrast-dark-color);
+    border-bottom: 1px solid #444;
 }
 
 .resume ul {
-    list-style-type: square;
-    padding-left: 20px;
+    padding-left: 1.5rem;
 }
 
 .resume li {
-    padding-bottom: 5px;
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #111;
+    color: var(--text-muted);
+    padding: var(--padding);
+    font-size: 0.85rem;
+}
+
+footer a {
+    color: var(--accent-dark);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
